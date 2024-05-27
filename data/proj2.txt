@@ -1,0 +1,161 @@
+Analysis of Algorithms CS 375, Spring 2024
+Project 2
+Due in part by Monday, March 11 (done in class!), and in part by Sunday, April 7.
+(Please see notes and descriptions below!)
+Project 2: Algorithm Design and Explanation—Loop Invariants, Exhaustive Search, and Beyond!
+In this assignment, you’ll work in teams of four1 to design multiple algorithms, to use loop invariants to understand and explain algorithms, and to create and deliver a presentation about some of the algorithms you designed. The goals of this project are:
+ togiveyoupracticedesigningalgorithms—startingherewithexhaustivesearchalgorithms— and improving the efficiency of algorithms;
+ to give you practice using loop invariants to explain algorithm correctness;
+ to give you practice creating and giving a technical presentation; and
+ to give you practice working with other students as a team.
+The Project Assignment
+This project is a multi-part assignment, with different deadlines for different parts: the deadline for Part 1 is March 11 (in Spring ’24, Part 1 is to be completed as an in-class activity before the remainder of the project is assigned), and the deadline for Parts 2–4 is April 7 (see Section 5 below). As an overview, here are the parts of the project assignment:
+1. Design Exhaustive Search Algorithms Following up on your in-class assignment, your team will collectively design exhaustive search algorithms for a variety of problems, as specified below.
+2. Improve Time Efficiency Your team will pick one of the problems and make your exhaustive search algorithm more efficient.
+3. Reduction For the same problem chosen for part 2 above—yes, make sure it’s the same one—you will reduce that problem to one of the other problems given in part 1. (This is a new topic for us—we’ll talk more about it in class soon!)
+4. Create and Give a Presentation Your team will present work from all three other parts of the assignment about the problem you chose for parts 2 and 3 above, using loop invariants where appropriate to explain the correctness of your algorithms.
+There are things to do for each part of the assignment, as described individually below.
+1Teams of size less than four may be approved by your prof., but the ideal team size is four.
+ 1
+
+1 Design Exhaustive Search Algorithms
+For this project, your team will collectively solve four problems with exhaustive search algorithms: one on which you will focus heavily, including doing a presentation; and three others, for which your submission will be a simpler write-up. Instructions are below, but as always, please be in touch with any questions!
+Important Note: The purpose of this assignment is for you to design and create solutions, not to look them up. Please see the course policies on our syllabus (course information document, from our website) about submitting solutions that are similar to or derivative from other sources, and please make sure your work is your own, within the guidelines of course policies. See below for more information.
+1.1 Independent Problem Solving (In-Class Assginment)
+Your team has eight problems to solve, grouped into three Categories of related problems, described in the accompanying document The Eight Problems: Information for Project 2, available on the CS375 Project Assignments page. Under ideal circumstances, with four people in your team, each of you would have attempted to create exhaustive search algorithms to solve two of the eight problems during class on March 11, making it possible for your team to cover all eight of the problems among you. It’s no problem if that didn’t happen, though—there’s plenty of time to go back and look at all eight during the remainder of the project assignment.
+1.2 Team Problem Solving
+With each team member having submitted their two algorithms, your entire team should meet to discuss your algorithms created during the March 11 class period. Part of the point of this is to give and receive constructive peer feedback about algorithm design, as you’re reading over each other’s work having not seen it before.
+Then, for your project submission, your team will work together to create / revise and write up algorithms for three of the original eight problems, keeping in mind the following:
+ Your three problems must not include the problem on which you’re doing your pre- sentation.
+ Your three problems must include one from each Category in the Eight Problems doc- ument, accompanying this assignment on our CS375 Project Assignments webpage.
+ Each of your three algorithms should be presented as pseudocode, with a short English description of how the algorithm works, and a concise, high-level analysis of its time and space complexity. You do not need to give a detailed correctness argument or use loop invariants for these three algorithms.
+For other parts of this project, your team will also work on an algorithm for a fourth of the eight problems. As described in Sections 2–4, your team will improve on the time efficiency of that algorithm, you will come up with a solution for it using a reduction, and you will give a presentation about it accompanied by an informative write-up that includes complexity analyses and the use of loop invariants for explaining correctness.
+2
+
+To Submit for this part of the project
+2
+
+By 11:59pm on Sunday, April 7, the entire team should submit a document containing their polished write-ups of algorithms for three of the eight problems, as described above. Please submit these typewritten answers in a PDF file named CS375 Proj2 ThreeAlgos Team <INITIALS>.pdf. Additional instructions for submit- ting this ThreeAlgos document, along with the remainder of your work for the project, are given in Section 5 below.
+Improve Time Efficiency
+As mentioned in Section 1, your team will choose one of the eight problems on which to give a presentation and focus for the other parts of this project. In the remainder of this project assignment, I’ll use the variable name P to refer to the problem on which your team chooses to focus (just so that there’s a name for it!).
+After your team has worked together to arrive at a good exhaustive search solution for problem P, in your work for Part 1 of the project, your next step will be to improve upon the time efficiency of that exhaustive search solution.
+In general—not just for this project, but in general for algorithm design—there are a few ways to think of improving upon an algorithm’s time efficiency. They include:
+1. You can make it somewhat faster with small(-ish) changes that streamline but do not substantially redesign the algorithm or change its asymptotic complexity class.
+2. You can make it much faster with a substantial redesign—perhaps even giving a new algorithm altogether—which might even improve its asymptotic complexity class.
+3. You can focus on special cases of the input that can be solved very efficiently. That is, instead of coming up with a more efficient solution that works for all possible inputs in the problem’s specification, come up with a solution that is much more efficient—i.e., a better asymptotic complexity class—for some of the possible inputs.
+For example, imagine that you’ve solved a problem with this input specification: Input: k, a positive integer
+But you then come up with a much faster algorithm that will work only when k is an even number. That faster algorithm does not meet the original problem specifications, but it is an improvement in the special case of an even integer input.
+NOTE: Smaller input sizes are rarely considered special cases in this sense. If a suggested “improvement” is “It’s the same algorithm, but it’s super-fast on small inputs!”, that likely is not actually a useful improvement. Please see me if your team has a suggested improvement that requires looking at only very small inputs, to confirm that it’s worthy of including in your project write-up / presentation!
+For this project, your team will come up with improvements upon the efficiency of your original exhaustive search algorithm for problem P. You are encouraged to think of improve- ments in terms of the three ways listed above, and you are especially encouraged not to restrict yourself to only the first or second of them—special-case improvements can be very helpful, even on very simple-seeming special cases!
+3
+
+There are no fixed criteria for this project about exactly how much you must speed up your initial exhaustive search algorithm—or, with the “special cases” approach, how broadly applicable your improvements might be, to cover as many cases as possible. Your team can also propose up to three algorithms or modifications that improve the efficiency of your original algorithm for problem P, although submitting three improvements is not necessarily better than one. Ultimately, your team will earn more credit on this part of the project for improvements that show more depth of thought about the problem and its solutions, achieve greater time efficiency, apply more broadly to possible inputs, and are more thoroughly and helpfully analyzed and described—but in some cases, one substantial improvement might achieve that better that three small ones. (I hope these criteria make intuitive sense to you. As always, please feel free to ask me questions!)
+Hint: You are advised not to try to come up with polynomial-time solutions for the general cases of any of the eight problems presented. You might, however, create polynomial time solutions for special cases, which you could choose to include in your write-up / presentation!
+To Submit for this part of the project In your presentation for this project, your team should present not only your original exhaustive search algorithm for problem P but also your improvements to it. In the write-up that accompanies your presentation, please include the following:
+ A full description of your exhaustive search algorithm for problem P, including a short English description of it, pseudocode for it, a concise and convincing correctness argu- ment for it using loop invariants to establish correctness, and a concise, high-level complexity analysis for it.
+ English descriptions of each improvement. Each description should include 1–2 sen- tences about how you came up with the ideas behind that proposed improvement.
+ Pseudocode showing what each improvement does.
+ A concise, high-level complexity analysis showing how much each improvement actually improved the time efficiency of the original exhaustive search algorithm. Although you do not need to use formal definitions of asymptotic complexity in your analysis, you might want to use some part of them—in particular, if your improvement doesn’t change the asymptotic complexity class, you might describe its improvement in terms of a lower leading constant for complexity analysis.
+You do not necessarily need to give a separate correctness argument for your improvements, although if they affect the loop invariant(s) your team previously used to show correctness of the exhaustive search algorithm, you do need to show that the improvements also solve the problem correctly, which could involve a modified loop invariant.
+More details about your presentation and its write-up are in Section 4 below.
+4
+
+3 Reduction
+Sometimes, we can incorporate solutions to previously solved problems as subroutines in an algorithm we’re designing. For this project, your team will do that in a specific way: You’ll reduce problem P to another problem.
+Informally, in general, reducing problem A to problem B means creating an algorithm that, if you plugged in a subroutine that solved problem B, would immediately be able to solve problem A—the algorithm reduces the task of solving problem A to the task of solving problem B. We’ll call such an algorithm a reduction from A to B.
+As a concrete, very simple example—which we also went over in our March 13 class meeting—consider problem A with these specifications:
+Input: List L = [c1, c2, . . . cn] of numbers.
+Output: True if the first element of L, c1, is 375; False otherwise.
+And consider problem B with these specifications: Input: List M = [d1, d2, . . . dk] of numbers.
+Output: True if the last element of M, dk, is 375; False otherwise.
+For these problems, a reduction from A to B would take some input L—remember, this reduction is an algorithm for some problem A, so it has to take an input intended for A— and create a new list M = [c1] that contains only the first element of L. Then, the reduction would use M as input to a subroutine that solved problem B. If that subroutine returned True, that would mean c1 = 375 (do you see why?), which in turn means that the first element of L is 375, so the reduction solving A should return True. On the other hand, if that subroutine for B returned False on input of list M, that would mean c1 is not 375, so the reduction solving A should return False.
+There are other possible reductions that could have worked—for instance, M could in- stead have been created as M = [cn,...c1], built from all elements of L in reverse order, rather than just a list with one element; the rest of the reduction would have been exactly the same. For this project, your team just needs to present one correct reduction. (Please note again that this is a very simple example—your work for this project may not be quite this simple!)
+For this project, your team will create a reduction from problem P to any other of the eight problems given in the project. Here is the specific way to think of it for this assignment:
+ An all-powerful creature has bestowed upon you a wonderful gift of magic! They’ve given you seven magic subroutines—one for each problem in the accompanying Eight Problems document other than P—that will solve each problem in O(1) time! To use one of these magic subroutines, just give it some input that matches the input specifications for the problem, and then it will instantly (well, in O(1) time) give you a correct True or False answer for that input to that problem!
+   Note: Reduction is new content for us, and we will discuss it in class, ideally on March 13. It is presented here ahead of that time for you to read in advance, and for you to look back at as reference throughout your process.
+ 5
+
+ There’s a catch, though: You only get to use one of these magic subroutines—any one you choose, but only that one—and you only get to use it once. After that, all seven subroutines disappear!
+ Your task is to write a new algorithm to solve problem P that makes use of the magic subroutine of your choice. It shouldn’t be an exhaustive search algorithm anymore; the magic subroutine can do the hard work of exhaustive search! In fact, if you are careful in choosing and employing the magic subroutine, you could even come up with a polynomial time algorithm for problem P!
+(Recall from lecture that a polynomial time algorithm is one that is O(nk) for some constant k. This is much faster than any exponential- or factorial-time algorithm—even a large polynomial like n100 has a rate of growth much slower than 2n.)
+Just to give a name to the problem you choose to reduce P to, let’s use variable Q to refer to that problem—i.e., you’ll using the magic subroutine that solves problem Q as part of your reduction from P to Q. Your reduction should thus transform any possible input p for problem P into an input q for problem Q, such that when you get a True or False answer about input q for Q, you can use that to come up with a correct True or False answer about input p for problem P.
+For this part of the project, in addition to creating the reduction as described above, you will also do all of the following:
+ Analyze the time complexity of your reduction, under the assumption that the solution for Q comes in O(1) time. For maximal credit, your reduction should be in polynomial time—O(nk) for some k—but don’t worry about what constant k you use. Every correct polynomial time reduction will be equally good for this project!
+ Include the reduction in your presentation (see Section 4 below). Be sure to include problems P and Q you’re reducing from and to, a short description of your reduction algorithm (pseudocode is not required, though you may include it if you think it helps your presentation!), a short explanation of correctness, and a short complexity analysis.
+ Describe the reduction in the write-up document accompanying the presentation. Again, state the problems P and Q you’re reducing from and to, and give a helpfully complete description of the reduction—an English description is required; pseudocode is optional—along with a short explanation of correctness and your complexity analysis of the reduction.
+Your explanation of correctness does not need to use loop invariants—your reduction will probably be straightforward enough that loop invariants aren’t required. If your team thinks loop invariants might be a good idea to use, though, feel free to do so, or feel free to ask me about it!
+Important note: A correct reduction must be exactly consistent with the Input / Output specifications for both P and Q. For full credit, your explanation of correctness should explicitly refer to those specifications.
+6
+
+Your presentation and accompanying write-up document will contain all the work you need to submit for this part of the project. Please make sure your reduction is clearly and concisely described in the presentation itself, and all helpful details for understanding the reduction are included in the write-up!
+Hint: See Section 1.2 of the accompanying Eight Problems document for a hint that might (or might not, depending on your approach!) be useful for reductions involving problems in the Social Networks Category.
+4 Create and Give a Presentation
+At this point, your team has done a lot of work on problem P. Let’s hear about it!
+Your team will give a technical presentation about the algorithms you’ve created for problem P. For your presentation, create slides (in PowerPoint, Google Slides, or some other application of your choice) and take 15–20 minutes to present all of the material needed. Presentations that are too long or too short may not receive full credit (too short often indicates that some important material was not well presented; too long often indicates that additional preparation would have resulted in a more effective talk), so it is recommended that you target a 16–18 minute presentation. If you think your talk will be much longer or shorter than that, please discuss that with me—I will be happy to help you find a good
+balance for your presentation.
+The default expectation is that you will record your presentation as a screen recording in
+Zoom. If you believe another option would be better for your team, please see me about it as soon as possible!
+This is a team presentation and a class assignment, so ideally, the entire team would learn about all parts of the topic being presented, and not only would the workload be balanced among team members, but it would also appear balanced to viewers. For that reason, your presentation should consist of each person presenting for roughly 2 minutes at a time, followed by a different teammate—so, for example, in a roughly 16 minute presentation, each person on a four-person team would take two non-consecutive shifts of presenting for roughly 2 minutes each. This structure might require a conceptual topic to be split among multiple individuals in the presentation, due to the impositions of time limits, but that’s part of the pedagogical benefit of this—it encourages more people to engage with more different parts of the topic being presented. Important note: Presentations not following this structure will not receive full credit for this assignment. If there are questions about what’s expected in terms of the division among teammates of time spent presenting, please let me know!
+Here are some things you should include in your presentation (not necessarily in this order!):
+Your exhaustive search algorithm For your exhaustive search algorithm, please include:
+ An accessible description of the problem P you solved.
+ A high-level summary of your algorithm and how it works.
+ A short example that you step through, to give your audience a sense of what problem P is and how your algorithm works. It may be appropriate to only step through a part of an example instead of an entire one, but you should do enough to fully illuminate how your algorithm works for your audience.
+7
+
+ Pseudocode of the algorithm, along with a correctness argument using a loop invariant.
+ A complexity argument of the algorithm, including what the worst-case and best- case complexities are, and how much space is needed beyond the original input.
+Your improvements to your exhaustive search algorithm For each of the improve- ments you’re presenting, please include:
+ A high-level description of the improved algorithm.
+ A short example that you step through, to give your audience a sense how the improvement differs from the original exhaustive search algorithm. Once again, you may not need to go through a full example, but you should do enough to illuminate the differences in your improved algorithm.
+ Pseudocode of the improved algorithm, along with a correctness argument. As noted above, you need not use loop invariants for this (though you could if you thought it was necessary), but you do need to give a concise and convincing correctness argument. You can refer to your original exhaustive search algorithm and its correctness without re-explaining them.
+ A complexity argument of the algorithm, including what the worst-case and best- case complexities are, and how much space is needed beyond the original input.
+ A comparison of the complexity of your improved algorithm with that of your exhaustive search algorithm.
+Your reduction algorithm For your reduction, please include:
+ An accessible description of the problem Q you’re reducing to.
+ A high-level description of the reduction algorithm that solves P, including how it uses the subroutine for Q in that solution.
+ A short example, to show your audience what the reduction does—transforming input to P into input to Q, and using output from the subroutine for Q to get a correct answer on the input to P.
+ Pseudocode of the reduction, along with a correctness argument. As noted in Section 3 above, this will involve referring to the specifications of P and Q. You need not use loop invariants for this; just give a concise and convincing correctness argument that the reduction meets specifications and solves P correctly (assuming the subroutine solves Q correctly). You can refer to your original exhaustive search algorithm and its correctness without re-explaining them.
+ Worst-case time complexity and space complexity arguments for the reduction, assuming the subroutine for Q has O(1) time and space complexity. (Magic!)
+You should assume that your audience is at the level of CS students who are familiar with asymptotic complexity and loop invariants but are not yet experts with them. For example, assume that your audience knows a set of size n has 2n subsets, a list of length n has n! per- mutations, and all about the relative growth rates of functions used in asymptotic complexity (including knowing what “polynomial time” means), but would need to be walked through details involving leading constants and n0 thresholds in definitions of asymptotic complexity.
+8
+
+You should also assume your audience has no previous knowledge of your algorithms or any problems involved, and they may not quickly grasp any subtleties.
+To help prepare for your presentation, please look through the documents linked from CS375’s Project Assignments page:
+ Some general advice on how to give good technical presentations—Dale Skrien shared this with his classes, and I am passing it along to you!
+ A tutorial on screen recording with Zoom, from Colby Academic ITS.
+ Advice on setting up a good environment for a web conference using Zoom from Colby
+Academic ITS. (I’m not sure how useful this will be, but I’m including it just in case.)
+Your Accompanying Write-Up In addition to the presentation itself, your team will create an accompanying write-up document, which should enable your audience to under- stand the highlights of your presentation even if they do not see your talk. This document must be typed (submitted in PDF) and contain some important details that you may not have time to include in your talk itself. (For example, some small but important details of complexity arguments might not fit in the 15–20 minutes of your talk, but they can be included in the write-up.) For full credit, your write-up must be polished, well formatted for a professional technical presentation, easy to read, and free of grammatical errors.
+Please see individual sections above for more information about details to include in your presentation write-up about the exhaustive search, improvements, and reduction algorithms. Depending on the margins / font size / etc. of your document, your write-up should probably be 7–10 pages in length. Please keep it as concise as it can be while still containing all relevant information. If your write-up is running longer or shorter than that range, please see me to check whether it contains unneeded material, or too little material; write-ups that
+are much too long or too short are not maximally effective and may not receive full credit.
+Dress Rehearsal As part of this project, please schedule a dress rehearsal with me. This should be a live, in-person presentation, rather than on Zoom—the intent is to be as effective as possible in giving feedback on the organization and content of your talk, rather than on using Zoom technology. (As in our class meetings, masks will be required for our dress rehearsal meeting. If that will be problematic for any of your teammates, please let me know!) Plan on 30–40 minutes for the dress rehearsal. Come to the dress rehearsal already having practiced your talk, with your slides ready and your write-up ready for me to look at while you’re presenting—the rehearsal is a dress rehearsal, not a draft rehearsal.
+So that the dress rehearsal time can be used as effectively as possible, you are strongly encouraged to record a draft rehearsal / practice run of your talk beforehand and do a self- evaluation of how it went, identifying areas of strength and room for improvement. Time permitting, I will be happy to give feedback on that recording during our appointment time!
+Please note there will be significant deductions to your grade if your eventual project submission includes a poor presentation—including things like poor organization, poor clarity of speaking, or poor knowledge of the material—so please, use your draft rehearsal(s) and our dress rehearsal time wisely to polish your work.
+I expect to schedule all dress rehearsal appointments for the afternoons of Wednesday, April 3, Thursday, April 4 and Friday, April 5. Please email me to set up an appoint- ment, and please be as flexible as possible with your availability for scheduling—those will be very busy days!
+9
+
+Some suggestions for getting audiences engaged in a presentation
+Note from your Prof.: Dale Skrien gave these suggestions to his students for his presen- tation assignments. I’m not sure that they all fully apply to this presentation, but in the interest of giving you good advice about technical presentations in general, I’m passing them along to you.
+ Get the audience to care about the subject. For example, get the presentation started by asking a question whose answer the audience cares about.
+ Keep examples simple and focused. Don’t make the audience think about irrelevant things.
+ Use conversational tones in presentations. Use “I”, “me”, and “we” so that the lis- tener’s brain thinks it’s in a conversation.
+ Garr Reynolds, the author of Presentation Zen, says, “the principles and techniques for creating a presentation for a conference or a keynote address have more in common with the principles and techniques behind the creation of a good documentary film or a good comic book than the creation of a conventional static business document with bullet points.”
+ Something to think about regarding your presentation (also from Garr): “If the au- dience could remember only one thing (and you’ll be lucky if they do), what do you want it to be?”
+Please feel free to ask me questions about them, if you’d like!
+10
+
+5 Submission Instructions
+Deadline: 2:30pm, March 11 (already done in class!) For the independent problem solving work in Section 1, as described in that section, every individual should have submit- ted their work in a PDF file named CS375 proj2InClass <userid>.pdf where <userid> is replaced by your full Colby userid, and submit it to your SubmittedWork folder.
+Deadline: 11:59pm, April 7 For all of the group work in this project, a “designated sub- mitter” from each team should submit four items, one to their Google Drive SubmittedWork folder, and three by emailing them to me. The file to submit to the SubmittedWork folder of the designated submitter:
+ A document containing their polished write-ups of algorithms for the three problems solved for Section 1, as described above. Please submit these typewritten answers in a PDF file named CS375 Proj2 ThreeAlgos Team <INITIALS>.pdf, where <INITIALS> is replaced by the initials of the team members in the group in the team assignments. E.g., if Eric Aaron and Stephanie Taylor were the teammates, the file from that team would be called CS375 Proj2 ThreeAlgos Team EA ST.pdf.
+The items to email to me (eaaron@colby.edu):
+ A PDF file with all of the slides used for the presentation. Please put two slides per page (as is done for CS375 course lecture notes) and name the file
+CS375 Proj2 Slides Team <INITIALS>.pdf.
+ The write-up document that accompanies your presentation, which should be a PDF file called CS375 Proj2 WriteUp Team <INITIALS>.pdf.
+ A video file (or link to it) of your presentation. Please put it in your Google Drive space if it’s too large to simply include in an email. Please name the file
+CS375 Proj2 Presentation Team <INITIALS>.mp4
+Note the preferred mp4 format. If for any reason you cannot submit an mp4 video, please let me know as soon as possible!
+Lateness policy: To keep pace with the project assignments in CS375, it is important that this assignment be turned in promptly. For this project, there will be a deduction of 1.5% for each day late—i.e., 1.5% deduction for submitting up to 24 hours late; 3.0% deduction for submitting more than 24 hours late, up to 48 hours; etc—up to a 10% deduction for submitting up to 7 days (168 hours) late. After 7 days, late submissions will receive a 40% deduction. Please submit your work promptly!
+As always, extenuating circumstances will be considered—please contact me as soon as possible if any extenuating circumstances are impeding your work on this project!
+11
